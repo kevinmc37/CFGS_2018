@@ -1,0 +1,32 @@
+Alemania	Mercedes AMG Petronas F1 Team	F1 W08 Hybrid	Mercedes PU106D Hybrid	Pirelli	44	Reino Unido	Lewis Hamilton	Titular	HAM	
+Alemania	Mercedes AMG Petronas F1 Team	F1 W08 Hybrid	Mercedes PU106D Hybrid	Pirelli	77	Finlandia	Valtteri Bottas	Titular	BOT	
+Alemania	Mercedes AMG Petronas F1 Team	F1 W08 Hybrid	Mercedes PU106D Hybrid	Pirelli		Reino Unido	George Russell	Proves	RUS	
+Alemania	Mercedes AMG Petronas F1 Team	F1 W08 Hybrid	Mercedes PU106D Hybrid	Pirelli		Alemania	Mick Schumacher	Proves	SCH	
+Austria	Red Bull Racing	RB13	TAG Heuer5	Pirelli	3	Australia	Daniel Ricciardo	Titular	RIC	
+Austria	Red Bull Racing	RB13	TAG Heuer5	Pirelli		Francia	Pierre Gasly	Proves	GAS	
+Austria	Red Bull Racing	RB13	TAG Heuer5	Pirelli	33	Países Bajos	Max Verstappen	Titular	VES	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli	5	Alemania	Sebastian Vettel	Titular	VET	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli		Mónaco	Charles Leclerc	Proves	LEC	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli		Italia	Antonio Fuoco	Proves	FUO	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli		España	Marc Gené	Proves	GEN	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli		Italia	Antonio Giovinazzi	Proves	GIO	
+Italia	Scuderia Ferrari	SF17-H	Ferrari 059/6	Pirelli	7	Finlandia	Kimi Räikkönen	Titular	RAI	
+India	Sahara Force India F1 Team	VJM10	Mercedes PU106D Hybrid	Pirelli	11	México	Sergio Pérez	Titular	PER	
+India	Sahara Force India F1 Team	VJM10	Mercedes PU106D Hybrid	Pirelli		México	Alfonso Celis	Proves	CEL	
+India	Sahara Force India F1 Team	VJM10	Mercedes PU106D Hybrid	Pirelli	31	Francia	Esteban Ocon	Titular	OCO	
+Reino Unido	Williams Martini Racing	FW40	Mercedes PU106D Hybrid	Pirelli	18	Canadá	Lance Stroll	Titular	STR	
+Reino Unido	Williams Martini Racing	FW40	Mercedes PU106D Hybrid	Pirelli	19	Brasil	Felipe Massa	Titular	MAS	
+Reino Unido	McLaren Honda F1 Team	MP4-32	Honda RA617H	Pirelli	2	Bélgica	Stoffel Vandoorne	Titular	VAN	
+Reino Unido	McLaren Honda F1 Team	MP4-32	Honda RA617H	Pirelli		Reino Unido	Jenson Button	Proves	BUT	
+Reino Unido	McLaren Honda F1 Team	MP4-32	Honda RA617H	Pirelli	14	España	Fernando Alonso	Titular	ALO	
+Italia	Scuderia Toro Rosso	STR12	Renault RE17	Pirelli	26	Rusia	Daniil Kvyat	Titular	KVY	
+Italia	Scuderia Toro Rosso	STR12	Renault RE17	Pirelli		Francia	Pierre Gasly	Proves	GAS	*******pot estar en dues escuderies alhora
+Italia	Scuderia Toro Rosso	STR12	Renault RE17	Pirelli	55	España	Carlos Sainz	Titular	SAI	
+Estados Unidos	Haas F1 Team	VF-17	Ferrari 059/6	Pirelli	8	Francia	Romain Grosjean	Titular	GRO	
+Estados Unidos	Haas F1 Team	VF-17	Ferrari 059/6	Pirelli		Estados Unidos	Santino Ferrucci	Proves	FER	
+Estados Unidos	Haas F1 Team	VF-17	Ferrari 059/6	Pirelli	20	Dinamarca	Kevin Magnussen	Titular	MAG	
+Francia Renault	Renault Sport F1 Team	RS17	Renault RE17	Pirelli	27	Alemania	Nico Hülkenberg	Titular	HUL	
+Francia Renault	Renault Sport F1 Team	RS17	Renault RE17	Pirelli		Rusia	Sergey Sirotkin	Proves	SIR	
+Francia Renault	Renault Sport F1 Team	RS17	Renault RE17	Pirelli	30	Reino Unido	Jolyon Palmer	Titular	PAL	
+Suiza	Sauber F1 Team	C36	Ferrari 059/526	Pirelli	9	Suecia	Marcus Ericsson	Titular	ERI	
+Suiza	Sauber F1 Team	C36	Ferrari 059/526	Pirelli	94	Alemania	Pascal Wehrlein	Titular	WEH	

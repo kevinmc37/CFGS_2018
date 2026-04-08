@@ -1,0 +1,52 @@
+Andalucía	1	4	Almeria
+Andalucía	1	11	Cádiz
+Andalucía	1	14	Córdoba
+Andalucía	1	18	Granada
+Andalucía	1	21	Huelva
+Andalucía	1	23	Jaén
+Andalucía	1	29	Málaga
+Andalucía	1	41	Sevilla
+Aragón	2	22	Huesca
+Aragón	2	44	Teruel
+Aragón	2	50	Zaragoza
+Principado de Asturias	3	33	Asturias
+Islas Baleares	4	7	Baleares
+Islas Canarias	5	35	Las Palmas
+Islas Canarias	5	38	Santa Cruz De Tenerife
+Cantabria	6	39	Cantrabria
+Castilla y León	7	5	Ávila
+Castilla y León	7	9	Burgos
+Castilla y León	7	24	León
+Castilla y León	7	34	Palencia
+Castilla y León	7	37	Salamanca
+Castilla y León	7	40	Segovia
+Castilla y León	7	42	Soria
+Castilla y León	7	47	Valladolid
+Castilla y León	7	49	Zamora
+Castilla-La Mancha	8	2	Albacete
+Castilla-La Mancha	8	13	Ciudad Real
+Castilla-La Mancha	8	16	Cuenca
+Castilla-La Mancha	8	19	Guadalajara
+Castilla-La Mancha	8	45	Toledo
+Cataluña	9	8	Barcelona
+Cataluña	9	17	Girona
+Cataluña	9	25	Lleida
+Cataluña	9	43	Tarragona
+Comunidad Valenciana	10	3	Alacant
+Comunidad Valenciana	10	12	Castelló
+Comunidad Valenciana	10	46	València
+Extremadura	11	6	Badajoz
+Extremadura	11	10	Cáceres
+Galicia	12	15	A Coruña
+Galicia	12	27	Lugo
+Galicia	12	32	Ourense
+Galicia	12	36	Pontevedra
+Madrid	13	28	Madrid
+Región de Murcia	14	30	Murcia
+Comunidad Foral de Navarra	15	31	Navarra
+País Vasco	16	1	Arava
+País Vasco	16	20	Guipuzkoa
+País Vasco	16	48	Vizcaya
+La Rioja	17	26	La Rioja
+Ceuta 	18	51	Ceuta
+Melilla	19	52	Melilla
