@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Comptes Bancaris</title>
+        <link rel="stylesheet" href="calculadora.css">
+        <script type="text/javascript" src="funcions.js"></script>
+    </head>
+    <body>
+        Entitat: <input type="text" id="entitat" name="entitat" value="0182">
+        Agència: <input type="text" id="agencia" name="agencia" value="2325"><br>
+        Dígit Control: <input type="text" id="control" name="control">
+        Compte Corrent: <input type="text" id="compte" name="compte" value="0010001000"><br>
+        IBAN: <input type="text" id="iban" name="iban"><br><br>
+        <button onclick="calcularControl();" type="button"> Calcular control i IBAN </button><br><br><br>
+        Targeta de crèdit: <input type="text" id="targeta" name="targeta" value="2090207354417568">
+        <div id="validar"></div><br>
+        <button onclick="validarTargeta();" type="button"> Validar targeta </button>
+    </body>
+</html>

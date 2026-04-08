@@ -1,0 +1,125 @@
+#main {
+    min-width: 1000px;
+    width: 100%;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu, .synopsis, .controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: Arial;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+.descripcioControls, .descripcioSynopsis {
+    font-size: 35px;
+    color: black;
+}
+.descripcioControls { padding-top: 75px; }
+.descripcioSynopsis { padding-top: 125px; }
+.descripcioControls div { margin-top: 25px; }
+.titol {
+    height: 45%;
+    font-size: 70px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.opcions {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.contingut {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    overflow: hidden;
+}
+.cloud { position: absolute; }
+.styleMonedes {
+    position: absolute;
+    font: Arial;
+    font-size: 40px;
+    color: white;
+    display: flex;
+}
+.level {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    white-space: nowrap;
+}
+.bgLevel {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+}
+.grass { background-image: url('images/grass.png'); }
+.land { background-image: url('images/land.png'); }
+.chest { background-image: url('images/chest.png'); }
+.openChest { background-image: url('images/openChest.png'); }
+.nail { background-image: url('images/nail.png'); }
+.nailDown { background-image: url('images/nailDown.png'); }
+.star { background-image: url('images/star.gif'); }
+.door { background-color: black; }
+.position {
+    width: 50px;
+    height: 50px;
+    float: left;
+    /*box-shadow: inset 0px 0px 10px green;*/
+}
+.player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+.monsterRight {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+.rotate, .jump, .fall, .move, .moveMonster {
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+}
+.rotate, .move, .moveMonster { animation-timing-function: ease-in-out; }
+.rotate { animation-name: rotate; }
+.jump {
+    animation-name: jump;
+    animation-timing-function: ease-out; 
+}
+.fall {
+    animation-name: fall;
+    animation-timing-function: ease-in;
+}
+.move { animation-name: move; }
+.moveMonster { animation-name: moveMonster; }
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(90deg) translateY(0%); }
+}
+@keyframes jump {
+    from { transform: translateY(0%); }
+    to { transform: translateY(-300%); }
+}
+@keyframes fall {
+    from { transform: translateY(0%); }
+    to { transform: translateY(300%); }
+}
+@keyframes move {
+    from { transform: translateX(0%); }
+    to { transform: translateX(100%); }
+}
+@keyframes moveMonster {
+    from { transform: translateX(0%); }
+    to { transform: translateX(100%); }
+}
