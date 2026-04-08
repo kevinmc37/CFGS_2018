@@ -1,0 +1,74 @@
+* {	/*Ressetejem el navegador per tal d'eliminar totes les broses que quedin en caché*/
+    margin:0;
+    padding:0;
+}
+
+.trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+}
+#main {
+    height: 600px;
+    width: 600px;/*50%;*/
+    background-color: teal;
+    color:navy;
+    border: 10px solid black;
+    margin: 0 auto;
+    /* margin-top: 100px;*/
+}
+#main ul{ /*Traiem punts list-style:none*/
+    list-style:none;
+    width: 100%;
+    margin: 0 auto;
+}
+#main ul li{ /*determinem les mides de cada casella*/
+    width: 100px;
+    height:100px;
+    padding:10px;
+    float: left; /*Els elements de llista són de línia, però m'interessa que es puguin posar en qualsevol lloc. amb això fem que no ocupi tota a línia sinó que permeti ocupar espai al costat mentre n'hi hagi. El nombfe de divs el marcarà el delimitador del pqre que hem fet que */
+    background-color:teal;
+    /*background-image:url(elquesigui);
+    background-size:cover;*/
+    font-size:20px;
+    font-weight:700px;
+    line-height: 80px; /*mateixa que la cel"la*/
+    text-align: center;
+    /*margin: 0 auto;*/
+}
+#main ul li img{ /*determinem les mides de cada casella*/
+    /*object-fit: cover;*/
+    width: 100px;
+    height:100px;
+}
+#main ul li .selected{ /*canvia el color de fons de la casella*/
+    background-color:red;
+} /*Per tal que sigui responsive. Fem servir les media-queryes*/
+@media(max-width:450px){ /*Quan la pantalla sigui més petita que aqesta mida, s'han d'activar les propietats següents:*/
+    #main{
+            width:240px;
+            height: 240px;
+    }
+    #main ul li{ /*determinem les mides de cada casella*/
+            width: 48px;
+            height:48px;
+            float: left; /*Els elements de llista són de línia, però m'interessa que es puguin posar en qualsevol lloc. amb això fem que no ocupi tota a línia sinó que permeti ocupar espai al costat mentre n'hi hagi. El nombfe de divs el marcarà el delimitador del pqre que hem fet que */
+            background-color:red;
+            line-height: 48px; /*mateixa que la cel"la*/
+            /*margin: 0 auto;*/
+    }
+    #main ul li .selected{ /*determinem les mides de cada casella*/
+            background-color:teal;
+    }
+}
+.girar {
+    animation-name: spin;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}

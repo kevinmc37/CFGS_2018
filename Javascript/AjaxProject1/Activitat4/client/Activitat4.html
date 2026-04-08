@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Projecte Google Maps</title>
+    <script type="text/javascript">
+        function inicialitza() {
+            var miLatLong = { lat: 42.054436, lng: 2.262991 };
+            var antipodLatLong = { lat: -miLatLong.lat, lng: miLatLong.lng-180 };
+            
+            var misOpcions = {
+                zoom: 10,
+                center: miLatLong,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var antipodOpcions = {
+                zoomControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                streetViewControl: false,
+                rotateControl: false,
+                fullscreenControl: false,
+                scrollwheel: false,
+                draggable: false,
+                zoom: misOpcions.zoom,
+                center: antipodLatLong,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            
+            var miMapa = new google.maps.Map(document.getElementById("mapa"), misOpcions);
+            var miAntipoda = new google.maps.Map(document.getElementById("mapa2"), antipodOpcions);
+            
+            var marcador = new google.maps.Marker({
+                position: miLatLong,
+                map: miMapa,
+                title: "Wiiiiiiii"
+            });
+            var marcAntipod = new google.maps.Marker({
+                position: antipodLatLong,
+                map: miAntipoda,
+                title: "Antipowiiiiiiii"
+            });
+            
+            var markersClick = [];
+            var markersTrobar = [];
+            var xhttp = new XMLHttpRequest();
+                        
+            miMapa.addListener('center_changed', function() {
+                var novaPosition = { lat: -miMapa.getCenter().lat(), lng: miMapa.getCenter().lng()-180 };
+                miAntipoda.setCenter(novaPosition);
+                
+                xhttp.onreadystatechange = function() { if (this.readyState === 4 && this.status === 200) { buscarLlocs(this); } };
+                xhttp.open("GET", "http://localhost:8081/Activitat4/servidor/capitalsMon.xml", true);
+                xhttp.send();
+
+                function buscarLlocs(xml) {
+                    var arxiuXML = xml.responseXML;
+                    var noms = arxiuXML.getElementsByTagName("capital");
+                    var lats = arxiuXML.getElementsByTagName("lat");
+                    var lngs = arxiuXML.getElementsByTagName("lng");
+                    for (var compt = 0; compt < noms.length; compt++) {
+                        var lat = parseInt(lats[compt].innerHTML);
+                        var lng = parseInt(lngs[compt].innerHTML);
+                        var trobarLloc = { lat: lat, lng: lng };
+                        if (miMapa.getBounds().contains(trobarLloc)) {
+                            var nouMarker = new google.maps.Marker({
+                                position: trobarLloc,
+                                map: miMapa,
+                                title: "Has trobat " + noms[compt].innerHTML + "!"
+                            });
+                            markersTrobar.push(nouMarker);
+                        }
+                    }
+                }
+                
+            });
+            
+            miMapa.addListener('zoom_changed', function() {
+                var nouZoom = miMapa.getZoom();
+                miAntipoda.setZoom(nouZoom);
+            });
+            
+            miMapa.addListener('maptypeid_changed', function() {
+                var nouMapType = miMapa.getMapTypeId();
+                miAntipoda.setMapTypeId(nouMapType);
+            });
+            
+            miMapa.addListener('click', function(event) {
+                var position = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+                var novaPosition = { lat: -event.latLng.lat(), lng: event.latLng.lng()-180 };
+                for (var i = 0; i < markersClick.length; i++) {
+                    markersClick[i].setMap(null);
+                }
+                var marcador = new google.maps.Marker({
+                    position: position,
+                    map: miMapa,
+                    title: "Nou marker"
+                });
+                var marcAntipod = new google.maps.Marker({
+                    position: novaPosition,
+                    map: miAntipoda,
+                    title: "MarkerAntipoda"
+                });
+                markersClick.push(marcador);
+                markersClick.push(marcAntipod);
+            });
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="mapa" style="width: 500px; height: 400px; margin-bottom: 20px;"></div>
+    <div id="mapa2" style="width: 500px; height: 400px;"></div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8QKdPs-KU283FKQyDMKAWFN6Vo2hzl5s&callback=inicialitza"></script>
+</body>
+</html>

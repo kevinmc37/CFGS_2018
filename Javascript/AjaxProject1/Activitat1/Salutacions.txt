@@ -1,0 +1,3 @@
+Hola!!
+Us saludo des del Servidor Web!!!
+Estic fent proves amb ECMA6, o això crec :S

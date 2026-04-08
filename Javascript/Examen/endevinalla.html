@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Endevina el número</title>
+        <script type=text/javascript>
+            function Endevinalla() {
+                var numUsuari;
+                var numMaquina = 0;
+                while (numMaquina === 0) {
+                    numMaquina = Math.random()*100;
+                    numMaquina = Math.round(numMaquina);
+                }
+                for (var intents = 1; intents < 11; intents++) {
+                    numUsuari = prompt("Adivina el nombre que he pensat! Intent "+intents);
+                    if (numUsuari !== null) {
+                        numUsuari = parseInt(numUsuari);
+                        if (isNaN(numUsuari)) {
+                            alert("Entra un nombre vàlid.");
+                            intents--;
+                        }
+                        else {
+                            if ((numMaquina - numUsuari) <= 10) {
+                                if (numUsuari === numMaquina) {
+                                    alert("L'has endevinat!");
+                                    document.getElementById("numUsuari").innerHTML=numUsuari;
+                                    document.getElementById("numMaquina").innerHTML="Num màquina: "+numMaquina;
+                                    break;
+                                }
+                                else {
+                                    if (intents === 10) {
+                                        alert("Has perdut!");
+                                        document.getElementById("numUsuari").innerHTML=numUsuari;
+                                        document.getElementById("numMaquina").innerHTML="Num màquina: "+numMaquina;
+                                        break;
+                                    }
+                                    if (numMaquina > numUsuari) { alert("T'hi acostes! El nombre és més gran."); }
+                                    else { alert("T'hi acostes! El nombre és més petit."); }
+                                }
+                            }
+                            else if (numMaquina > numUsuari) { alert("El nombre que dones és massa petit."); }
+                            else { alert("El nombre que dones és massa gran."); }
+                            
+                        }
+                        if (intents === 10) {
+                            alert("Has perdut!");
+                            document.getElementById("numUsuari").innerHTML=numUsuari;
+                            document.getElementById("numMaquina").innerHTML="Num màquina: "+numMaquina;
+                            break;
+                        }
+                    }
+                    else { break; }
+                    document.getElementById("numUsuari").innerHTML=numUsuari;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="numMaquina"></div>
+        Num usuari: <div id="numUsuari"></div>
+        <button onclick="Endevinalla();" type="button">Endevinar</button>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="calculadora.css">
+        <script type="text/javascript" src="calculadora.js"></script>
+    </head>
+    <body>
+        <div id="calculadora">
+            <div id="resultat">
+                <span id="valorResultat"></span>
+            </div>
+            <input id="operacio" placeholder="Escriu l'operació" readonly><br>
+            <button onclick="calcular(this.value);" type="button" value="7"> 7 </button>
+            <button onclick="calcular(this.value);" type="button" value="8"> 8 </button>
+            <button onclick="calcular(this.value);" type="button" value="9"> 9 </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="/" disabled> &divide; </button>
+            <button onclick="calcular(this.value);" type="button" value="r"> R </button>
+            <button onclick="calcular(this.value);" type="button" value="c"> C </button><br>
+            <button onclick="calcular(this.value);" type="button" value="4"> 4 </button>
+            <button onclick="calcular(this.value);" type="button" value="5"> 5 </button>
+            <button onclick="calcular(this.value);" type="button" value="6"> 6 </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="*" disabled> x </button>
+            <button onclick="calcular(this.value);" type="button" value="("> ( </button>
+            <button onclick="calcular(this.value);" type="button" value=")"> ) </button><br>
+            <button onclick="calcular(this.value);" type="button" value="1"> 1 </button>
+            <button onclick="calcular(this.value);" type="button" value="2"> 2 </button>
+            <button onclick="calcular(this.value);" type="button" value="3"> 3 </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="-" disabled> - </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="sup" disabled> x<sup>y</sup> </button>
+            <button onclick="calcular(this.value);" type="button" value="v"> &radic; </button><br>
+            <button onclick="calcular(this.value);" type="button" value="0"> 0 </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="." disabled> . </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="%" disabled> % </button>
+            <button class="operador" onclick="calcular(this.value);" type="button" value="+" disabled> + </button>
+            <button id="answer" onclick="calcular(this.value);" type="button" value="Ans" disabled> Ans </button>
+            <button class="operador" id="igual" onclick="calcular(this.value);" type="button" value="=" disabled> = </button>
+        </div>
+    </body>
+</html>

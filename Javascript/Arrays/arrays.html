@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta charset="utf-8">
+        <title>Arrays</title>
+    </head>
+    <body>
+        <input type="file" id="files" name="files[]" multiple />
+        <output id="list"></output><br>
+        <img id="ima" src="imatges/linux.jpeg" alt="Smiley face" height="200" >
+        <script>	
+            function handleFileSelect(evt) {
+                var files = evt.target.files;
+                output = [];
+                var nomImatges = [];
+                for (var i = 0, f; f = files[i]; i++) {
+                    if (f.type.match('image.*')) {
+                        nomImatges.push(f.name);
+                        var reader = new FileReader();
+                        reader.addEventListener("load", function(e) {
+                            output.push(e.target.result);
+                        });
+                        reader.readAsDataURL(f);
+                    }
+                }
+                document.getElementById('list').innerHTML = '<ul>' + nomImatges.join('<br>') + '</ul>';
+                setInterval(function() { mostrarImatgeAleatoria(output); }, 300 );
+            }
+
+            function mostrarImatgeAleatoria(arrayImas) {
+                var ipos=Math.floor(Math.random()*arrayImas.length);
+                document.getElementById('ima').src=arrayImas[ipos];
+            }
+            function ordenarNums(metode) {
+                var array = [45, 77, 188, 33, 22, 39856, -24545];
+                if (metode === "asc") { array.sort( function(a, b) { return a-b} ); }
+                else if (metode === "desc") { array.sort( function(a, b) { return b-a } ); }
+                else { array.sort( function(a, b) { return 0.5 - Math.random() } ); }
+                document.getElementById("ordenar").innerHTML=array;
+            }
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+        </script>
+        <div id="extern"></div><br>
+        <div id="ordenar">Array [45, 77, 188, 33, 22, 39856, -24545]</div><br>
+        <button onclick="ordenarNums(this.value);" value="asc">Ordenar ascendentment</button>
+        <button onclick="ordenarNums(this.value);" value="desc">Ordenar descendentment</button>
+        <button onclick="ordenarNums(this.value);" value="aleatori">Ordenar aleatoriament</button>
+    </body>
+</html>

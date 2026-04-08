@@ -1,0 +1,33 @@
+button {
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+#resultat {
+    width: 270px;
+    height: 75px;
+    text-align: right;
+    border: solid 1px gray;
+    border-radius: 10px 10px 0px 0px;
+    background-color: gainsboro;
+}
+#valorResultat {
+    font-size: 30px;
+    padding-right: 10px;
+    line-height: 70px;
+    white-space: nowrap;
+}
+#operacio {
+    width: 272px;
+    height: 50px;
+    padding-right: 10px;
+    text-align: right;
+    border-radius: 0px 0px 10px 10px;
+    border: solid 1px gray;
+}
+#calculadora {
+    width: 272px;
+    padding: 5px;
+    border: solid 3px black;
+    border-radius: 10px;
+}
