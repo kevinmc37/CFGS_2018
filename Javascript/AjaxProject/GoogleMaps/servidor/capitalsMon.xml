@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<root>
+    <continent name="Àfrica">
+        <pais name="Afganistan">
+            <capital>Kabul</capital>
+            <lat>34.5533853</lat>
+            <lng>68.9168512</lng>
+        </pais>
+        <pais name="Angola">
+            <capital>Luanda</capital>
+            <lat>8.8535062</lat>
+            <lng>13.1436728</lng>
+        </pais>
+        <pais name="Algèria">
+            <capital>Argel</capital>
+            <lat>36.7018112</lat>
+            <lng>2.8070492</lng>
+        </pais>
+    </continent>
+    <continent name="Amèrica">
+        <pais name="Antigua i Barbuda">
+            <capital>Saint John's</capital>
+            <lat>17.1255118</lat>
+            <lng>-61.8624474</lng>
+        </pais>
+        <pais name="Argentina">
+            <capital>Buenos Aires</capital>
+            <lat>-37.0666529</lat>
+            <lng>-64.5320789</lng>
+        </pais>
+    </continent>
+    <continent name="Àsia"/>
+    <continent name="Europa"/>
+    <continent name="Oceania"/>
+</root>

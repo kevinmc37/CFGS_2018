@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Activitat 2 - Actualització periòdica de continguts</title>
+    <link rel="stylesheet" type="text/css" href="estil.css">
+    <script type="text/javascript" src="AjaxClass.js"></script>
+</head>
+<body>
+    <div id="ticker"></div>
+    <div id="accions">
+        <input type="button" id="aturar" value="Aturar"/>
+        <input type="button" id="anterior" value="&laquo; Anterior" />
+        <input type="button" id="seguent" value="Següent &raquo;" />
+    </div>
+    <div id="continguts">
+    <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+    <p>Proin tristique condimentum sem. Fusce lorem sem, laoreet nec, laoreet et, venenatis nec, ligula.
+    Nunc dictum sodales lorem. Fusce turpis. Nullam semper, ipsum ut ultrices mattis, nulla magna luctus 
+    purus, sit amet vehicula magna magna vel velit.</p>
+    <h2>Morbi a lacus. Proin pharetra nisi id est.</h2>
+    <p>Maecenas mollis suscipit sapien. Pellentesque blandit dui eu mauris. Etiam elit urna, iaculis non,
+    dignissim in, fermentum nec, ipsum. Nulla commodo aliquam lectus. Sed vulputate diam ac sapien accumsan
+    consequat. Aliquam id urna sed dolor tincidunt tempor.</p>
+    <h2>Quisque consequat. Nullam vel justo.</h2>
+    <p>Cras sit amet elit a mauris ultricies viverra. Phasellus placerat quam et magna. Nunc sed tellus. 
+    Pellentesque hendrerit pellentesque nunc. Aenean turpis. Sed justo tellus, mollis at, euismod at,  
+    pellentesque eu, tellus. Nam vulputate. Nunc porttitor sapien tristique velit. Vestibulum tempus, 
+    quam non dapibus pellentesque, sem nulla sagittis ligula, et volutpat turpis felis vitae nunc.</p>
+    <p>Ut eros magna, congue in, sodales ac, facilisis ac, dolor. Aenean faucibus pellentesque est. Proin
+    cursus. Vivamus mollis enim in magna. Donec urna risus, convallis eget, aliquet non, auctor sit amet, leo.
+    Duis tellus purus, pharetra in, cursus sed, posuere semper, lorem. Fusce eget velit nec felis tempus
+    gravida. Donec et augue vitae nulla posuere hendrerit. Nulla vehicula scelerisque massa. Phasellus eget
+    lorem id quam molestie ultrices. Integer ac ligula sit amet lectus condimentum euismod. Sed malesuada 
+    orci eu neque.</p>
+    </div>
+    <script type="text/javascript">
+        function afegirZero(temps) {
+            if (temps < 10) {
+                temps = "0" + temps;
+            }
+            return temps;
+        }
+        
+        function noticies() {
+            var hora = "";
+            ajaxClass.carregarContingut('../servidor/generarContinguts.php', 'GET', null, function(data) {
+                var stringDate = new Date(data);
+                hora += afegirZero(stringDate.getHours()) + ":" + afegirZero(stringDate.getMinutes()) + ":" + afegirZero(stringDate.getSeconds());
+                mostrarContingut.innerHTML = hora + " ";
+            }, function(textMostrar) {
+                noticiaActual = textMostrar;
+                mostrarContingut.innerHTML += textMostrar;
+                if (llistaNoticies.indexOf(textMostrar) === -1) {
+                    hores.push(hora);
+                    llistaNoticies.push(textMostrar);
+                }
+                mostrarContingut.classList.remove("flash");
+                void mostrarContingut.offsetWidth;
+                mostrarContingut.classList.add("flash");
+            });
+            clear = setTimeout(noticies, 5000);
+        }
+        
+        var ajaxClass = new AjaxClass();
+        var mostrarContingut = document.getElementById("ticker");
+        var aturar = document.getElementById("aturar");
+        var anterior = document.getElementById("anterior");
+        var seguent = document.getElementById("seguent");
+        var hores = [];
+        var llistaNoticies = [];
+        var noticiaActual = "";
+        var clear;
+        noticies();
+        aturar.addEventListener("click", function() {
+            if (this.value === "Aturar") {
+                clearTimeout(clear);
+                this.value = "Iniciar";
+            }
+            else {
+                noticies();
+                this.value = "Aturar";
+            }
+        });
+        anterior.addEventListener("click", function() {
+                clearTimeout(clear);
+                if (llistaNoticies.indexOf(noticiaActual) === -1 || llistaNoticies.indexOf(noticiaActual) !== 0) {
+                    var index = llistaNoticies.indexOf(noticiaActual);
+                    noticiaActual = llistaNoticies[index-1];
+                    mostrarContingut.innerHTML = hores[index-1] + " " + noticiaActual;
+                }
+                aturar.value = "Iniciar";
+        });
+        seguent.addEventListener("click", function() {
+                clearTimeout(clear);
+                if (llistaNoticies.indexOf(noticiaActual) === -1 || llistaNoticies.indexOf(noticiaActual) !== llistaNoticies.length-1) {
+                    var index = llistaNoticies.indexOf(noticiaActual);
+                    noticiaActual = llistaNoticies[index+1];
+                    mostrarContingut.innerHTML = hores[index+1] + " " + noticiaActual;
+                }
+                aturar.value = "Iniciar";
+        });
+    </script>
+</body>
+</html>

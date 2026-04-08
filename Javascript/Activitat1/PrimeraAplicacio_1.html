@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Salutacions des d'AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type='text/javascript' src='AjaxClass.js'></script>
+        <script type="text/javascript">
+            var ajaxClass = new AjaxClass();
+            window.onload = ajaxClass.carregarContingut('http://localhost:8081/Activitat1/Salutacions.txt','GET',null,function(textMostrar){
+                var newP = document.createElement("p");
+                newP.setAttribute("id","httpText");
+                newP.innerHTML=textMostrar;
+                document.body.appendChild(newP);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Creació dinàmica d'elements com a resposta d'una petició AJAX</h1>
+    </body>
+</html>

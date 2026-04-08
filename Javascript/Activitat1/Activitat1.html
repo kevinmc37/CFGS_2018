@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Activitat 1</title>
+    <style type="text/css">
+      body { font: 13px Arial, Helvetica, sans-serif; }
+      h2 { margin-bottom: 0; font-size: 1.2em; }
+      #recurs, #enviar { padding: .3em; font-size: 1.2em; }
+      #principal { float: left; width: 70%; }
+      #secundari { float: right; width: 25%; }
+      #continguts, #estats, #capsaleres, #codi {
+        border: 2px solid #CCC;
+        background: #FAFAFA;
+        padding: 1em;
+        white-space: pre;
+      }
+      #continguts {
+        min-height: 400px;
+        max-height: 600px;
+        overflow: scroll;
+      }
+      #estats { min-height: 200px; }
+      #capsaleres { min-height: 200px; }
+      #codi { min-height: 100px; font-size: 1.5em; }
+    </style>
+    <script type='text/javascript' src='AjaxClass.js'></script>
+  </head>
+  <body>
+    <form action="#">
+      URL: <input type="text" id="recurs" size="70" />
+      <input type="button" id="enviar" value="Mostrar contingut" />
+    </form>
+
+    <div id="principal">
+      <h2>Contingut de l'arxiu:</h2>
+      <div id="continguts"></div>
+      
+      <h2>Capçaleres HTTP de la resposta del servidor:</h2>
+      <div id="capsaleres"></div>
+    </div>
+    
+    <div id="secundari">
+      <h2>Estats de la petició:</h2>
+      <div id="estats"></div>
+      
+      <h2>Codi d'estat:</h2>
+      <div id="codi"></div>
+    </div>
+      <script type="text/javascript">
+        var ajaxClass = new AjaxClass();
+        var mostrarContingut = document.getElementById("enviar");
+        var contingut = document.getElementById("continguts");
+        var estat = document.getElementById("estats");
+        var capçaleres = document.getElementById("capsaleres");
+        var codiEstat = document.getElementById("codi");
+        var urlText = document.getElementById("recurs");
+        urlText.value = window.location;
+        mostrarContingut.addEventListener("click", function() {
+            estat.innerHTML = "";
+            capçaleres.innerHTML = "";
+            contingut.textContent = "";
+            ajaxClass.carregarContingut(urlText.value, 'GET', null, function(textMostrar) {
+                contingut.textContent = textMostrar;
+            },
+            function(state) {
+                estat.innerHTML += state;
+            },
+            function(capsalera) {
+                capçaleres.innerHTML = capsalera;
+            },
+            function(codi) {
+                codiEstat.innerHTML = codi;
+            });
+        });
+    </script>
+  </body>
+</html>
