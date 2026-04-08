@@ -1,0 +1,108 @@
+// Partit1 ex1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+	char inicial1,inicial2;
+	int edat1,edat2,suma;
+	printf("Inserta la inicial del teu nom: ");
+	scanf_s("%c",&inicial1);
+	printf("Inserta la teva edat: ");
+	scanf_s("%d",&edat1);
+	printf("Inserta la inicial de la teva parella: ");
+	scanf_s("%c",&inicial2);
+	printf("Inserta l'edat de la teva parella: ");
+	scanf_s("%d",&edat2);
+	suma=edat1+edat2;
+	printf("\n%c te %d anys, %c te %d anys i tots dos junts sumeu %d anys \n",inicial1,edat1,inicial2,edat2,suma);
+}
+
+
+
+------------------
+
+
+// Partit Ex2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+	float costata,costatb,area; /* Aquí defineixo les variables costata, costatb i area, que fan referència a la mida del costat A, costat B i l'àrea del rectangle */
+	printf("Inserta la mida del costat a: "); /* Demano que s'inserti un número amb o sense decimals per tal de que la variable costata tingui un valor*/
+	scanf_s("%f",&costata); /* Aquí la persona ha d'insertar un número mitjançant el teclat */
+	printf("Inserta la mida del costat b: "); /* Demano que s'inserti un número amb o sense decimals per tal de que la variable costatb tingui un valor*/
+	scanf_s("%f",&costatb); /* Aquí la persona ha d'insertar un número mitjançant el teclat */
+	area=costata*costatb; /* Aquesta part calcula l'àrea del rectangle multiplicant el valor de les variables costata i costatb */
+	printf("L'area d'un rectangle amb costat 'a' = %f\n i 'b' = %f es igual a %f \n \n",costata,costatb,area); /* S'imprimeix a la pantalla el resultat del càlcul */
+}
+
+
+--------------------
+
+// Partit ex3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <math.h>
+#define pi 3.1416 /* Defineixo i declaro la constant pi, amb el valor de 3.1516, ja que el nombre Pi sempre tindrà el mateix valor */
+
+int main ()
+{
+	float radi,area; /* Defineixo les variables radi i area, que fan referència al radi i l'àrea del cercle */
+	printf("Inserta el valor del radi del cercle: "); /* S'imprimeix en pantalla el missatge que et demana que insertis el valor del radi */
+	scanf_s("%f",&radi); /* La persona introdueix un valor mitjançant el teclat, que pot ser sense o amb decimals */
+	area=(pi*(radi*radi)); /* Càlcul de l'àrea del cercle, utilitzant el quadrat del radi i multiplicant-lo per el nombre PI */
+	printf("L'area del cercle amb radi = %f es igual a %f \n \n",radi,area); /* S'imprimeix el resultat del càlcul de l'àrea del cercle */
+}
+
+
+---------------
+
+// Partit Ex4.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+
+int main ()
+{
+	int numero; /* Defineixo la variable numero */
+printf("Inserta un nombre de l'1 al 10: "); /* Demano un nombre entre 1 i 10, encara que la persona pot ficar un nombre més gran de 10 */
+scanf_s("%d",&numero); /* Aquí la persona ha d'introduir el número mitjançant el teclat */
+if (numero==7) /* Si el número que ha introduït és igual a 7, sortirà a la pantalla el missatge 'Has encertat!' */
+{
+	printf("Has encertat!\n \n");
+}
+else /* Si el número insertat no és igual a 7, sortirà a la pantalla el missatge 'Has fallat!' */
+{
+	printf("Has fallat!\n \n");
+}
+}
+
+----------------------
+
+// Partit Ex5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+	float preu,iva,final; /* Defineixo les variables preu, iva i final, que fan referència al preu que ha d'insertar l'usuari, l'IVA (21%) d'aquest preu i el preu final després de fer el càlcul */
+	printf("Inserta un preu: "); /* S'imprimeix a la pantalla el missatge que demana a l'usuari que inserti el preu */
+	scanf_s("%f",&preu); /* L'usuari ha d'insertar el preu mitjançant el teclat */
+	iva=(preu*21)/100; /* es calcula l'IVA del preu que ha insertat l'usuari */
+	final=preu+iva; /* Es calcula el preu final, sumant l'IVA al preu que l'usuari va insertar originalment */
+	printf("L'IVA (21%%) de %f es %f,\ni el preu final es %f \n \n",preu,iva,final); /* S'imprimeix en pantalla el preu que va insertar l'usuari, el càlcul de l'IVA d'aquest preu, i el resultat final de sumar l'IVA al preu original */
+}

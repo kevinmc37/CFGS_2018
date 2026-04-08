@@ -1,0 +1,113 @@
+Exercici 1
+
+
+#include "stdafx.h"
+#include <stdio.h>
+
+/* Aquest programa demana que introdueixis un nombre qualsevol, i et diu si és múltiple de 2, si és múltiple de 3, si és múltiple de 2 i 3 a la vegada, o si no ho és de cap dels dos */
+
+int main ()
+{
+	int nombre;
+
+	printf("Introdueix un nombre enter: ");
+	scanf_s("%d", &nombre);
+	if ((nombre % 2 == 0)&(nombre % 3 == 0)) printf("El nombre %d es multiple de 2 i 3",nombre);
+	else if ((nombre % 2 == 0)&(nombre % 3 != 0)) printf("El nombre %d es multiple de 2",nombre);
+	else if ((nombre % 2 != 0)&(nombre % 3 == 0)) printf("El nombre %d es multiple de 3",nombre);
+	else printf("El nombre %d no es multiple ni de 2 ni de 3",nombre);
+}
+
+
+-------------
+Exercici 2
+
+
+
+#include "stdafx.h"
+#include <stdio.h>
+
+/* Aquest programa et demana que introdueixis dos nombres, i et diu quin és el més gran dels dos, o si són iguals */
+
+int main ()
+{
+	float nombre1,nombre2;
+
+	printf("Introdueix un nombre: ");
+	scanf_s("%f", &nombre1);
+	printf("Introdueix un segon nombre: ");
+	scanf_s("%f", &nombre2);
+	if (nombre1 > nombre2) printf("El nombre %f es mes gran que el nombre %f.\n\n", nombre1, nombre2);
+	else if (nombre2 > nombre1) printf("El nombre %f es mes gran que el nombre %f.\n\n", nombre2, nombre1);
+	else printf("Els dos nombres son iguals.\n\n");
+}
+
+
+------------
+Exercici 3
+
+
+
+#include "stdafx.h"
+#include <stdio.h>
+
+/* Aquest programa et demana que introdueixis dos nombres enters, i et diu si tots dos són parells, si tots dos són senars, o si n’hi ha un de parell i un de senar */
+
+int main ()
+{
+	int nombre1, nombre2;
+
+	printf("Introdueix un nombre enter: ");
+	scanf_s("%d", &nombre1);
+	printf("Introdueix un segon nombre enter: ");
+	scanf_s("%d", &nombre2);
+	if ((nombre1 % 2 == 0)&(nombre2 % 2 == 0)) printf("Els dos nombres son parells.\n\n");
+	else if ((nombre1 % 2 != 0)&(nombre2 % 2 != 0)) printf("Els dos nombres son senars.\n\n");
+	else printf("Hi ha un nombre parell i un nombre senar.\n\n");
+}
+
+
+--------------
+Exercici 4
+
+
+
+#include "stdafx.h"
+#include <stdio.h>
+#define limit 21
+
+/* Aquest programa et demana que introdueixis la temperatura actual. Si la temperatura és inferior a 21 graus, sortirà un missatge dient que aturis l’aire condicionat. Si la temperatura és major o igual a 21 graus, el missatge dirà que activis l’aire condicionat */
+
+int main ()
+{
+	int temp;
+
+	printf("Introdueix la temperatura actual: ");
+	scanf_s("%d", &temp);
+	if (temp >= limit) printf("Activa l’aire condicionat.\n\n");
+	else printf("Atura l’aire condicionat.\n\n");
+}
+
+
+--------------
+Exercici 5
+
+
+
+#include "stdafx.h"
+#include <stdio.h>
+#define inici 9
+#define final 17
+
+/* Aquest programa et demana que introdueixis l’hora actual, que només pot comprendre valors entre 0 i 23. Si l’hora introduïda està fora d’aquest valors, surt un missatge d’error. Si l’hora és entre les 9 i les 17 (no inclòs), surt un missatge dient que és hora de treball. Si es qualsevol altra hora vàlida, el missatge dirà "Temps lliure" */
+
+int main ()
+{
+	int hora;
+
+	printf("Introdueix l’hora actual (de 0 a 23): ");
+	scanf_s("%d", &hora);
+	if ((hora < 0)|(hora > 23)) printf("Error. L’hora no es correcta.\n\n");
+	else if ((hora >= inici)&(hora < final)) printf("Es hora de treball.\n\n");
+	else printf("Temps lliure.\n\n");
+}

@@ -1,0 +1,307 @@
+Exercici Reference C++:
+-----------------------
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+bool bucle = false;
+
+int referencia(int& x, int& y)
+{
+	char lletra;
+	int desplaçamentx, desplaçamenty;
+	cout << "Vols desplaçarte? Y/N: ";
+	cin >> lletra;
+	if (lletra == 'y')
+	{
+		cout << endl << "Quant vols desplaçar la x? ";
+		cin >> desplaçamentx;
+		x = x + desplaçamentx;
+		cout << "Quant vols desplaçar la y? ";
+		cin >> desplaçamenty;
+		y = y + desplaçamenty;
+	}
+	else bucle = true;
+	return 0;
+}
+
+int main()
+{
+	int x = 0, y = 0;
+	while (bucle == false)
+	{
+		cout << "La posicio d'x es " << x << " i la posicio d'y es " << y << endl << endl;
+		referencia(x, y);
+	}
+}
+
+
+
+
+
+Exercici Reference C#:
+----------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        public static bool bucle = false;
+        static void Main(string[] args)
+        {
+            int x = 0, y = 0;
+            while (bucle == false)
+            {
+                Console.WriteLine("La posicio d'x es " + x + " i la posicio d'y es " + y);
+                referencia(ref x, ref y);
+            }
+        }
+        public static int referencia(ref int x, ref int y)
+        {
+            char line;
+            Console.WriteLine("Vols desplaçar-te? Y/N: ");
+            line = Console.ReadKey().KeyChar;
+            if (line == 'y')
+            {
+                Console.WriteLine("\n\nQuant vols desplaçar la x?");
+                int desplaçamentx = Convert.ToInt32(Console.ReadLine());
+                x = x + desplaçamentx;
+                Console.WriteLine("\nQuant vols desplaçar la y?");
+                int desplaçamenty = Convert.ToInt32(Console.ReadLine());
+                y = y + desplaçamenty;
+            }
+            else bucle = true;
+            return 0;
+        }
+    }
+}
+
+
+
+Exercici Nombre més gran (3) C++:
+---------------------------------
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+float maxim(float x, float y, float z)
+{
+	float maxim = x;
+	if (y > maxim) maxim = y;
+	if (z > maxim) maxim = z;
+	return maxim;
+}
+
+int main()
+{
+	float num1 = 1256.9457, num2 = 78.98245, num3 = 223.243, nounum;
+	nounum = maxim(num1, num2, num3);
+	cout << "El nombre maxim es " << nounum << endl;
+}
+
+
+
+
+Exercici Nombre més gran (3) C#:
+--------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1 = 98, num2 = 778.7, num3 = 7766, maxim;
+            maxim = maximum(num1, num2, num3);
+            Console.WriteLine("El numero mes gran es " + maxim);
+        }
+        public static double maximum(double x, double y, double z)
+        {
+            double maxim = x;
+            if (y > maxim) maxim = y;
+            if (z > maxim) maxim = z;
+            return maxim;
+        }
+    }
+}
+
+
+
+
+Exercici Nombre màxim array C#:
+-------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 1, 2, 33, 4, 5, 6 };
+            int gran;
+            gran = maxim(array);
+            Console.WriteLine("El nombre mes gran de l'array es " + gran);
+        }
+        public static int maxim(int[] x)
+        {
+            int maxim = x[0], llargada = x.Length;
+            for (int compt = 1; compt < llargada; compt++)
+            {
+                if (x[compt] > maxim) maxim = x[compt];
+            }
+            return maxim;
+        }
+    }
+}
+
+
+
+Exercici Nombre màxim array C++:
+--------------------------------
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int maxim(int x[], int y)
+{
+	int maxim = x[0];
+	for (int compt = 1; compt < y; compt++)
+	{
+		if (x[compt] > maxim) maxim = x[compt];
+	}
+	return maxim;
+}
+
+int main()
+{
+	int gran, array[] = { 1,2,3,4,55,6 };
+	int llargada = sizeof(array) / sizeof(*array);
+	gran = maxim(array, llargada);
+	cout << "El nombre mes gran de l'array es " << gran << endl;
+}
+
+
+
+
+Exercici Reference Array C#:
+----------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        public static bool bucle = false;
+        static void Main(string[] args)
+        {
+            int[] array = { 22, 45, 67, -3 };
+            while (bucle == false)
+            {
+                Console.WriteLine("\nAra l'array conté els nombres següents:\n" + array[0] + "\n" + array[1] + "\n" + array[2] + "\n" + array[3]);
+                referencia(ref array);
+            }
+        }
+        public static int referencia(ref int[] array)
+        {
+            char line;
+            Console.WriteLine("\nVols canviar algun nombre de l'array? Y/N: ");
+            line = Console.ReadKey().KeyChar;
+            if (line == 'y')
+            {
+                Console.WriteLine("\n\nQuin nombre vols canviar? Prem 1, 2, 3 o 4: ");
+                line = Console.ReadKey().KeyChar;
+                if (line == '1')
+                {
+                    Console.WriteLine("\n\nQuin vols que sigui el nou nombre?");
+                    array[0] = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (line == '2')
+                {
+                    Console.WriteLine("\n\nQuin vols que sigui el nou nombre?");
+                    array[1] = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (line == '3')
+                {
+                    Console.WriteLine("\n\nQuin vols que sigui el nou nombre?");
+                    array[2] = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (line == '4')
+                {
+                    Console.WriteLine("\n\nQuin vols que sigui el nou nombre?");
+                    array[3] = Convert.ToInt32(Console.ReadLine());
+                }
+                else if (line != '1' & line != '2' & line != '3' & line != '4')
+                {
+                    Console.WriteLine("\n\nNombre no valid.");
+                }
+            }
+            else bucle = true;
+            return 0;
+        }
+    }
+}
+
+
+
+
+Exercici Anys Traspas C#:
+-------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int any1 = 1582, any2 = 2017;
+            AnysTraspas(any1, any2);
+        }
+        public static int AnysTraspas(int any1, int any2)
+        {
+            bool traspas = false;
+            for (int compt = any1; compt <= any2; compt++)
+            {
+                traspas = EsAnyTraspas(compt);
+                if (traspas == true) Console.WriteLine(compt);
+            }
+            return 0;
+        }
+        public static bool EsAnyTraspas(int compt)
+        {
+            if ((compt % 400 == 0) | ((compt % 4 == 0) & (compt % 100 != 0))) return true;
+            else return false;
+        }
+    }
+}
